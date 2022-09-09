@@ -1,7 +1,20 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import { supabase } from "../database/Database";
+import { useEffect } from "react";
+import  UserProvider   from "../database/authContext";
+
+
+
+function MyApp({ Component, pageProps}) {
+
+  return (
+    <UserProvider >
+        <Component {...pageProps}/>
+    </UserProvider >
+  );
 }
 
-export default MyApp
+export default MyApp;
+
+

@@ -13,31 +13,61 @@ export default function Login()
 const [password,setPassword]=useState('');
 
     return(
-        <div>
-              <input type="email" id="email"  name="email" onChange={(e) => setEmail(e.target.value)}  className=" bg-slate-500 input peer placeholder-transparent rounded-md focus:ring-1 focus:ring-[#3D4E42] h-10 w-full border border-double  border-white focus:border-[#3D4E42]  outline-none   text-lg font-normal p-2 " placeholder="Email address" 
-   autoComplete="on" value={email}   required />
-
-<input type="Password" onChange={(e) => setPassword(e.target.value)}  id="password" name="password"  className=" bg-slate-500 input  peer placeholder-transparent rounded-md focus:ring-1 focus:ring-[#3D4E42] h-10 w-full border border-double  border-white focus:border-[#3D4E42]    outline-none peer p-2 " placeholder='Password' minLength="8" autoComplete="on"  value={password}  required />
-
-
-<button className="rounded-md   bg-slate-500 hover:bg-[#465B4D]  w-52 h-10 text-lg font-semibold btn hover:text-[#5EAC74]  text-black  " onClick={()=> login (email,password)} type="submit"  >Login <br/></button>
-<p className="text-[#465B4D] text-sm leading-loose">Setup a personal account for someone?  <button className="text-sm text-[#0b2b16] hover:underline hover:text-[#5EAC74]"  onClick={()=>router.push("/signup")}>Sign up for an entity account </button></p>
       
-<div className="flex min-h-screen flex-col items-center justify-center py-2">
-      
+      <body className="bg-[#3F3F3F]">
 
-      <input
-        type="file"
-        accept="image/*"
-        className="block w-auto text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-        id="file_input"
-        onChange={(e) => {
-          handle_cnic(e); 
-        }}
-      />
+      <div className="flex flex-row justify-between max-h-full max-w-full bg-[#3F3F3F]">
+      <div className="flex flex-col justify-center items-center mx-auto">
+         <img className="h-[-136.22px] w-[-309.92px] mx-auto" src="logo.svg" alt/>
+         <input
+          type="email"
+          id="email"
+          name="email"
+          onChange={(e) => setEmail(e.target.value)}
+          className=" bg-[#2F2F2F] input peer placeholder-transparent rounded-md focus:ring-1 focus:ring-[#3D4E42] h-10 w-full border border-double  border-white focus:border-[#3D4E42]  outline-none   text-lg font-normal p-2 "
+          placeholder="Email address"
+          autoComplete="on"
+          value={email}
+          required
+        />
+  
+        <input
+          type="Password"
+          onChange={(e) => setPassword(e.target.value)}
+          id="password"
+          name="password"
+          className="  bg-[#2F2F2F] mt-8 input peer placeholder-transparent rounded-md focus:ring-1 focus:ring-[#3D4E42] h-10 w-full border border-double  border-white focus:border-[#3D4E42]  outline-none   text-lg font-normal p-2"
+          placeholder="Password"
+          minLength="8"
+          autoComplete="on"
+          value={password}
+          required
+        />
+  
+        <button
+          className="rounded-md bg-[#5FA8A3] w-96 h-12 text-lg font-light mt-8  text-[#2F2F2F]"
+          onClick={() => login(email, password)} 
+          type="submit"
+        >
+          Login <br />   
+        </button>
+        <p className="text-[#465B4D] text-sm leading-loose">
+          Setup a personal account for someone?{" "}
+          <button
+            className="text-sm text-[#0b2b16] hover:underline hover:text-[#5EAC74]"
+            onClick={() => router.push("/signup")}
+          >
+            Sign up for an entity account{" "}
+          </button>
+        </p>
+  
+      </div>
+        
+     <div className="hidden xl:block">
+        <img className="h-full w-[1096px]" src="left.svg" alt="" />
+      </div>
     </div>
-      
-        </div>
+    </body>
     )
 
 

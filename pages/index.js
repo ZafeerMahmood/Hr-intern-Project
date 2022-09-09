@@ -1,22 +1,25 @@
-import { supabase } from '../database/Database'
-import React from "react";
-import  { useState } from "react";
-import { Modal, Button } from 'antd';
-import 'antd/dist/antd.css';
-import { useRouter } from "next/router";
 
-export default function Home() {
-  const router =useRouter();
+import React, { useContext ,useState,useEffect} from "react";
+import "antd/dist/antd.css";
+import  { Context } from "../database/authContext";
+import Home from "../components/Home";
+import Emp from '../components/Emp'
+
+
+export default  function Index({}) {
+
+  const { user, role, uuid ,emp} = useContext(Context)
+  console.log(emp)
+  const [loggedIn, setLoggedIn] = useState('employee')
+
+  useEffect(()=> {
+    setLoggedIn(role)
+  }, [role])
+
   return (
-   <div>
-         <button
-                className="  bg-transparent   hover:tracking-tighter    text-[#DBE3D6]  w-full h-20 font-bold border-none transition ease-in-out duration-500 text-lg  hover:text-[#5EAC74] "
-                onClick={()=>router.push("/addemployees")}
-              >
-                Add Employee
-              </button>
-
-                      
-   </div>
-  )
+    <div>
+        {loggedIn=='employee'? <Emp /> : <Home/>}
+     </div>
+  );
 }
+
