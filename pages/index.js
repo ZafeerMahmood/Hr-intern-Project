@@ -12,7 +12,7 @@ export default  function Index({}) {
   const router =useRouter();
   const { user, role, uuid ,emp} = useContext(Context)
  console.log(user,"inside")
-  const [loggedIn, setLoggedIn] = useState('employee')F
+  const [loggedIn, setLoggedIn] = useState('employee')
 
   useEffect(()=> {
     if(user===null){

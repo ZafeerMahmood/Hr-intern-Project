@@ -3,7 +3,7 @@ import { Modal } from "antd";
 import "antd/dist/antd.css";
 import { supabase } from "../database/Database";
 
-function appraisal() {
+function Appraisal() {
   const [endDate, setendDate] = useState(new Date());
   const [startDate, setStartDate] = useState(new Date());
 

@@ -4,7 +4,7 @@ import  { useState } from "react";
 import { Modal, Button } from 'antd';
 import 'antd/dist/antd.css';
 import { useRouter } from "next/router";
-export default function department_info()
+export default function Department_info()
 {
    
     const [dname, setDname] = useState("");

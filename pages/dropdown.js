@@ -6,7 +6,7 @@ import 'antd/dist/antd.css';
 import { useEffect } from "react";
 
 
-export default function dropdown()
+export default function Dropdown()
   {
     const [showOption , setShowOption] = useState(false);
     const handleClick = () =>

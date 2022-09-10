@@ -5,7 +5,7 @@ import  { useState } from "react";
 import { Modal, Button } from 'antd';
 import 'antd/dist/antd.css';
 import { useRouter } from "next/router";
-export default function seedepartment_info({dep_info}) {
+export default function Seedepartment_info({dep_info}) {
     
     console.log({dep_info});
     return (

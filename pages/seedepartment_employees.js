@@ -13,7 +13,7 @@ var checking;
 let i=0;
 let checker_extreme=0;
 let display;
-export default function seedepartment_info({  Final,EMP }) {
+export default function Seedepartment_emp({  Final,EMP }) {
 
   checker_extreme=EMP[i].id;
   return (

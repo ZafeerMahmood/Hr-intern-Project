@@ -4,7 +4,7 @@ import  { useState } from "react";
 import { Modal, Button } from 'antd';
 import 'antd/dist/antd.css';
 import { useRouter } from "next/router";
-export default function seeemployees({employee}) {
+export default function Seeemployees({employee}) {
     
     console.log({employee});
     return (

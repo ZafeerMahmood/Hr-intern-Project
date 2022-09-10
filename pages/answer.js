@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Modal, Button } from "antd";
 import "antd/dist/antd.css";
 import { useRouter } from "next/router";
-export default function seeemployees({ appraisals }) {
+export default function Answer({ appraisals }) {
   console.log({ appraisals });
   const [response,setResponse]=useState();
 

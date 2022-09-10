@@ -5,7 +5,7 @@ let data_e;
 var checking;
 
 
-const Emp_Details  = ({employee ,department1} ) =>
+const Dep_Emp_Details  = ({employee ,department1} ) =>
 {
     console.log({employee});
     console.log({department1});
@@ -44,7 +44,7 @@ const Emp_Details  = ({employee ,department1} ) =>
         </div>
      )
 }
-export default Emp_Details
+export default Dep_Emp_Details
 
 export async function getStaticPaths() 
 {

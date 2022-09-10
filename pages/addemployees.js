@@ -10,7 +10,7 @@ const url_saver_1=[];
 const data_saver_1=[];
 let cnic_front_saver;
 let cnic_back_saver;
-export default function addemployees() {
+export default function Addemployees() {
  
  
  

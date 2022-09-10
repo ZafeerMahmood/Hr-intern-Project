@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 
 
 
-export default function project ({})
+export default function Project ({})
 {
 
     const [derpartment_id , setDepartment_id]= useState("");
