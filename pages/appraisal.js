@@ -79,4 +79,4 @@ function Appraisal() {
   );
 }
 
-export default appraisal;
+export default Appraisal;
