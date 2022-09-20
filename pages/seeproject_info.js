@@ -1,34 +1,35 @@
 import { supabase } from '../database/Database'
 import React from "react";
-import  { useState } from "react";
-import { Modal, Button } from 'antd';
 import 'antd/dist/antd.css';
-import { useRouter } from "next/router";
+import ProjectList from '../components/List/ProjectList';
+import { getLayout } from '../layout/AdminLayout';
+
 export default function Seeemployees_info({project_details}) {
     
-    console.log({project_details});
     return (
-     <div>
+      <div className='w-full h-full overflow-auto bg-white '>
+        <div className=' flex flex-col  items-start justify-start  gap-11 w-full h-screen p-10  border-t-0 border-black border-l-0 border-[1px]'>
           
-          <div className="flex flex-col h-[65vh] w-3/4  rounded-md  bg-[#DBE3D6] opacity-75 shadow-md shadow-[#DBE3D6] ">
-                <div className="flex flex-row justify-center bg-[#DBE3D6]  text-2xl font-semibold text-black rounded-md leading-loose h-20">
-                  SEE PROJECT DETAILS
+          <div className="flex flex-col h-full w-3/4  rounded-md  opacity-75  shadow-md ">
+                <div className="flex flex-row justify-center  text-2xl font-semibold text-black rounded-md leading-loose h-20">
+                 PROJECT DETAILS
                 </div>
 
                 {project_details.map((project_details) => (
-                  <div key={project_details.proj_id} href={`/emplist/${project_details.proj_id}`}>
-                    <div className="h-20 text-base flex flex-row">
-                    {project_details.departments.id}    {project_details.proj_name} {project_details.departments.dep_name}  {project_details.created_at} 
-                    </div>
+                  <div key={project_details.proj_id}>
+                      <ProjectList pr={project_details} link ={`/emplist/${project_details.proj_id}`} /> 
                   </div>
+                   
                 ))}
-                <div className="flex flex-col h-full w-full  items-center "></div>
+  
               </div>
                         
      </div>
+      </div>
     )
   }
 
+  Seeemployees_info.getLayout = getLayout
 
 export async function getStaticProps() {
    

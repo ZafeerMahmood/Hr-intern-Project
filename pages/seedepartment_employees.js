@@ -1,10 +1,10 @@
 
 import { supabase } from '../database/Database'
 import React from "react";
-import  { useState } from "react";
-import { Modal, Button } from 'antd';
 import 'antd/dist/antd.css';
-import { useRouter } from "next/router";
+import DepartmentEmpList from'../components/List/DepartmentEmpList'
+import { getLayout } from '../layout/AdminLayout';
+
 let data_e;
 var  increment = 0 ;
 var increment1=0;
@@ -16,25 +16,46 @@ let display;
 export default function Seedepartment_emp({  Final,EMP }) {
 
   checker_extreme=EMP[i].id;
+  console.log(Final,"Final")
+  console.log(EMP,"Emp")
   return (
-    <div>
-      <div className="flex flex-col h-[65vh] w-3/4  rounded-md  bg-[#DBE3D6] opacity-75 shadow-md shadow-[#DBE3D6] ">
-        <div className="flex flex-row justify-center bg-[#DBE3D6]  text-2xl font-semibold text-black rounded-md leading-loose h-20">
-          SEE DEPARTMENT EMPLOYEES
-        </div>
+    <div className='w-full h-full overflow-auto bg-white '>
+    <div className=' flex flex-col  items-start justify-start  gap-11 w-full h-screen p-10  border-t-0 border-black border-l-0 border-[1px]'>
+      
+      <div className="flex flex-col h-full w-3/4  rounded-md  opacity-75  shadow-md ">
+            <div className="flex flex-row justify-center  text-2xl font-semibold text-black rounded-md leading-loose h-20">
+             Department Employees
+            </div>
 
-                        
-         {Final.map((value, index ) => {
-      return <a key={index}  href={`/dep_emp_list/${checker_extreme++}`}>{value}</a>
-    })}
+           
+            {Final.map((Final, index ) => {
+              
+              return <a key={index}  href={`/dep_emp_list/${checker_extreme++}`}>
+                 <div className="each flex hover:shadow-lg select-none p-5 rounded-md border-gray-300 border mb-3 hover:border-gray-500 cursor-pointer">
+                    <div className="left">
+                        <div className="header text-gray-800 font-semibold text-2xl">{`${Final[2]}`}</div>
+                        <div className="desc text-gray-600">{`${Final[4]}`} </div>
+                    </div>
+                    <div className="right m-auto mr-0">
+                        <div className="">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokelinecap="round" strokelinejoin="round" strokewidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+            </a>
+            })}
 
-     
-      </div>
-    </div>
+          </div>
+                    
+ </div>
+  </div>
   );
 } 
 
-
+Seedepartment_emp.getLayout = getLayout
 
 
 export async function getStaticProps() {

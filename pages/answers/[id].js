@@ -1,33 +1,32 @@
 import React from "react";
 import { supabase } from "../../database/Database";
-import { useState } from "react";
-import { Modal } from "antd";
 import "antd/dist/antd.css";
+ import AppraisalResponseList from "../../components/List/AppraisalResponseList";
+ import { getLayout } from "../../layout/AdminLayout";
 
-const answers = ({ appraisals_response}) => {
+ export default function Answers_d  ({ appraisals_response}) {
     return (
-        <div>
-          <div className="flex flex-col h-[65vh] w-3/4  rounded-md  bg-[#DBE3D6] opacity-75 shadow-md shadow-[#DBE3D6] ">
-            <div className="flex flex-row justify-center bg-[#DBE3D6]  text-2xl font-semibold text-black rounded-md leading-loose h-20">
-              Appraisal
+      <div className='w-full h-full overflow-auto bg-white '>
+      <div className=' flex flex-col  items-start justify-start  gap-11 w-full h-screen p-10  border-t-0 border-black border-l-0 border-[1px]'>
+        
+        <div className="flex flex-col h-full w-3/4  rounded-md  opacity-75  shadow-md ">
+              <div className="flex flex-row justify-center  text-2xl font-semibold text-black rounded-md leading-loose h-20">
+               APPRAISALS RESPONSE
+              </div>
+  
+              {appraisals_response.map((appraisals_response) => (
+                  <div key={appraisals_response.id}>
+                  <AppraisalResponseList res={appraisals_response} link={`/view/${appraisals_response.id}`}/>
+                  </div>
+                ))}
+  
             </div>
-    
-            {appraisals_response.map((appraisals_response) => (
-              <a key={appraisals_response.id} href={`/view/${appraisals_response.id}`}>
-                <a className="h-20 text-base flex flex-row">
-                  {appraisals_response.id} {appraisals_response.eid} {appraisals_response.answer}
-                </a>
-              </a>
-            ))}
-            
-    
-            <div className="flex flex-col h-full w-full  items-center "></div>
-          </div>
-        </div>
+                      
+   </div>
+    </div>
       );
 };
-export default answers;
-
+Answers_d.getLayout = getLayout
 export async function getStaticPaths() {
   const { data: appraisal } = await supabase.from("appraisals_response").select("id");
   const paths = appraisal.map(({ id }) => ({

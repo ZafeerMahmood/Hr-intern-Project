@@ -1,35 +1,32 @@
 import { supabase } from "../database/Database";
 import React from "react";
-import { useState } from "react";
-import { Modal, Button } from "antd";
 import "antd/dist/antd.css";
-import { useRouter } from "next/router";
+import AppraisalsList from "../components/List/AppraisalsList";
+import { getLayout } from '../layout/AdminLayout';
+
 export default function AppraisalLists({ appraisals }) {
-  console.log({ appraisals });
-
-
   return (
-    <div>
-      <div className="flex flex-col h-[65vh] w-3/4  rounded-md  bg-[#DBE3D6] opacity-75 shadow-md shadow-[#DBE3D6] ">
-        <div className="flex flex-row justify-center bg-[#DBE3D6]  text-2xl font-semibold text-black rounded-md leading-loose h-20">
-          Appraisal
-        </div>
+    <div className='w-full h-full overflow-auto bg-white '>
+    <div className=' flex flex-col  items-start justify-start  gap-11 w-full h-screen p-10  border-t-0 border-black border-l-0 border-[1px]'>
+      
+      <div className="flex flex-col h-full w-3/4  rounded-md  opacity-75  shadow-md ">
+            <div className="flex flex-row justify-center  text-2xl font-semibold text-black rounded-md leading-loose h-20">
+             APPRAISALS
+            </div>
 
-        {appraisals.map((appraisals) => (
-          <a key={appraisals.id} href={`/session/${appraisals.id}`}>
-            <a className="h-20 text-base flex flex-row">
-              {appraisals.id} {appraisals.created_at}
-            </a>
-          </a>
-        ))}
-        
+            {appraisals.map((appraisals) => (
+                <div key={appraisals.id}>
+                <AppraisalsList apr={appraisals} link={`/session/${appraisals.id}`}/>
+                </div>
+              ))}
 
-        <div className="flex flex-col h-full w-full  items-center "></div>
-      </div>
-    </div>
-  );
+          </div>
+                    
+ </div>
+  </div>
+  )
 }
-
+AppraisalLists.getLayout = getLayout
 export async function getStaticProps() {
     const { data: appraisals, error } = await supabase
     .from('appraisals')
@@ -38,3 +35,4 @@ export async function getStaticProps() {
     props: { appraisals },
   };
 }
+

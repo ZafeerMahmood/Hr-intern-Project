@@ -5,10 +5,11 @@ import { useEffect } from "react";
 import UserProvider from "../database/authContext";
 
 function MyApp({ Component, pageProps }) {
-  return (
+  const getLayout = Component.getLayout || ((page) => page);
+  return getLayout(
     <UserProvider>
       <Component {...pageProps} />
-    </UserProvider>
+   </UserProvider>
   );
 }
 

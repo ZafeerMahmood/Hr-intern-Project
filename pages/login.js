@@ -15,28 +15,30 @@ export default function Login() {
       <div className="flex flex-row justify-between max-h-full max-w-full bg-[#3F3F3F]">
         <div className="flex flex-col justify-center items-center mx-auto">
           <img
-            className="h-[-136.22px] w-[-309.92px] mx-auto"
-            src="logo.svg"
+            className="h-[-136.22px] w-[-309.92px] mx-auto mb-10"
+            src="Logo - WiserMachines.svg"
             alt
           />
+
+  
           <input
             type="email"
             id="email"
             name="email"
             onChange={(e) => setEmail(e.target.value)}
-            className=" bg-[#2F2F2F] input peer placeholder-transparent rounded-md focus:ring-1 focus:ring-[#3D4E42] h-10 w-full border border-double  border-white focus:border-[#3D4E42]  outline-none   text-lg font-normal p-2 "
+            className=" bg-[#2F2F2F] input peer placeholder-transparent rounded-md focus:ring-1 focus:ring-[#3D4E42] h-10 w-full border border-double  border-white focus:border-[#3D4E42]  outline-none   text-lg font-normal p-2 text-white "
             placeholder="Email address"
             autoComplete="on"
             value={email}
             required
           />
-
+  
           <input
             type="Password"
             onChange={(e) => setPassword(e.target.value)}
             id="password"
             name="password"
-            className="  bg-[#2F2F2F] mt-8 input peer placeholder-transparent rounded-md focus:ring-1 focus:ring-[#3D4E42] h-10 w-full border border-double  border-white focus:border-[#3D4E42]  outline-none   text-lg font-normal p-2"
+            className="  bg-[#2F2F2F] mt-8 input peer placeholder-transparent rounded-md focus:ring-1 focus:ring-[#3D4E42] h-10 w-full border border-double  border-white focus:border-[#3D4E42]  outline-none   text-lg font-normal p-2 text-white"
             placeholder="Password"
             minLength="8"
             autoComplete="on"
@@ -45,13 +47,13 @@ export default function Login() {
           />
 
           <button
-            className="rounded-md bg-[#5FA8A3] w-96 h-12 text-lg font-light mt-8  text-[#2F2F2F]"
+            className="rounded-md bg-[#AEADD2] w-96 h-12 text-lg font-light mt-8  text-[#2F2F2F]"
             onClick={() => login(email, password)}
             type="submit"
           >
             Login <br />
           </button>
-          <p className="text-[#465B4D] text-sm leading-loose">
+          {/* <p className="text-[#465B4D] text-sm leading-loose">
             Setup a personal account for someone?{" "}
             <button
               className="text-sm text-[#0b2b16] hover:underline hover:text-[#5EAC74]"
@@ -59,11 +61,11 @@ export default function Login() {
             >
               Sign up for an entity account{" "}
             </button>
-          </p>
+          </p> */}
         </div>
 
         <div className="hidden xl:block">
-          <img className="h-full w-[1096px]" src="left.svg" alt="" />
+          <img className="h-auto w-auto" src="HR 2.svg" alt="" />
         </div>
       </div>
     </body>
