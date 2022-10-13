@@ -14,7 +14,7 @@ const See_pdf1  = ({employee } ) =>
         <div className="flex flex-col w-screen h-screen font-extrabold text-3xl items-center ">
             {"Degree's"}
             <embed
-    src={employee.degree}
+    src={employee.degree[0]}
     type="application/pdf"
     frameBorder="0"
     scrolling="auto"

@@ -13,12 +13,12 @@ export default function Unsuccess () {
               
           
               Unsuccessful  , Try again
-              <img src='./images/cross.svg' height={25} width={25}/></div>
+              <img src='/cross.svg' height={25} width={25}/></div>
      <div className='flex flex-col h-full w-full rounded-lg  justify-end  '>                           
 <div className='flex flex-col h-24 w-full bg-[#E8E8E8] rounded-b-lg justify-center items-center '>
 <button className='flex flex-row rounded-lg font-medium h-10 w-32 text-xl bg-white  justify-center items-center hover:bg-[#4E4E4E] hover:text-white '  > 
 
-<p>Try on</p></button>
+Try on</button>
 </div>
 </div>
     </div>

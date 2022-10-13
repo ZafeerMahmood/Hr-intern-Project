@@ -2,7 +2,7 @@ import React from 'react'
 
 function DepartmentList({dep_info}) {
   return (
-    <a className='w-auto' key={`404`} href={`404`} target="_new">
+   
     <div className="each flex hover:shadow-lg select-none p-5 rounded-md border-gray-300 border mb-3 hover:border-gray-500 cursor-pointer">
         <div className="left">
             <div className="header text-gray-800 font-semibold text-2xl">{`${dep_info.dep_name}`}</div>
@@ -16,7 +16,7 @@ function DepartmentList({dep_info}) {
             </div>
         </div>
     </div>
-</a>
+
   )
 }
 

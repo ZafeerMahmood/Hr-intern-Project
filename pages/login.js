@@ -11,7 +11,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   return (
-    <body className=" w-screen h-screen bg-[#3F3F3F]">
+    <body className=" w-screen h-screen  fixed bg-[#3F3F3F]">
       <div className="flex flex-row justify-between max-h-full max-w-full bg-[#3F3F3F]">
         <div className="flex flex-col justify-center items-center mx-auto">
           <img
@@ -71,18 +71,44 @@ export default function Login() {
     </body>
   );
 
-  async function login(email, password) {
-    const { data, error } = await supabase.auth.signIn({ email, password });
 
+
+ async function check(currentUser){
+        
+          const { data: employees, error } = await supabase
+            .from("employees")  
+            .select("*")
+            .eq("emp_id", currentUser.user.id)
+            .single();
+          if (employees) {    
+            return "emp"
+          } else {
+           return 'admin'
+          }
+  
+} 
+  async function login(email, password) {
+
+    const { data, error } = await supabase.auth.signIn({ email, password });
+    console.log(data)
     if (error) {
       errorfun();
       document.getElementById("email").value = "";
       document.getElementById("password").value = "";
     } else {
       success();
-      router.push("/");
+      const role= await check(data)
+      if(role==='admin'){
+        router.push("/Adm");
+      }
+      else if(role==='emp'){
+        router.push("/Emp");
+      }
+      
     }
   }
+
+
 
   function errorfun() {
     Modal.error({

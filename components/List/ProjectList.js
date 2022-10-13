@@ -2,7 +2,7 @@ import React from 'react'
 
 function ProjectList({pr ,link}) {
     return (
-        <a className='w-auto' key={`${pr.proj_id}`} href={`${link}`} target="_new">
+      
         <div className="each flex hover:shadow-lg select-none p-5 rounded-md border-gray-300 border mb-3 hover:border-gray-500 cursor-pointer">
             <div className="left">
                 <div className="header text-gray-800 font-semibold text-2xl">{`${pr.proj_name}`}</div>
@@ -16,7 +16,7 @@ function ProjectList({pr ,link}) {
                 </div>
             </div>
         </div>
-    </a>
+ 
       )
 }
 

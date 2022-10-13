@@ -91,7 +91,7 @@ export default function Add_Emp_Lay() {
                 type="email"
                 id="email"
                 name="email"
-                onChange={handleEmail}
+                onChange={(handleEmail)}
                 value={email}
                 className=" input peer placeholder-transparent rounded-md focus:ring-1 focus:ring-[#4E4E4E] h-10 w-full border border-double  border-white focus:border-[#4E4E4E]  outline-none   text-lg font-normal p-3 "
                 placeholder="Email address"
@@ -377,11 +377,7 @@ export default function Add_Emp_Lay() {
                 click
                   ? "bg-[#747474] &&  border-[#4E4E4E] && text-white"
                   : " bg-[#FFFFFF]  &&  border-[#4E4E4E] && text-black "
-              } || ${
-                click1
-                  ? " hover:bg-none &&bg-[#FFFFFF]  &&  border-[#4E4E4E]  "
-                  : " hover:bg-[#747474] &&  border-[#4E4E4E]   "
-              } `}
+              }  `}
               onClick={handleSubmit}
               type="submit"
             >

@@ -41,30 +41,58 @@ const Emp_Details = ({ appraisal}) => {
     }
 
   return (
-    <div>
-      appraisal Id: <br />
-      {appraisal.id} <br />
-      appraisal created at <br />
-      {appraisal.created_at} <br />
+  
+      <div >
+    <div className='absolute w-full h-full bg-white '>
+   <div className=' flex flex-col  items-start justify-start  gap-11 w-full h-full p-10   border-black  border-[1px]'>
+     
+     <div className="flex flex-col h-full w-full  rounded-md  opacity-75 justify-center items-center shadow-md ">
+           <div className="flex flex-row justify-center  text-2xl font-semibold text-black rounded-md leading-loose h-20">
+             APPRAISAL 
+           </div>
+           <div className="flex flex-col  rounded-lg h-3/4 w-1/2 justify-center bg-[#ECEBEB] items-center shadow-md shadow-stone-800   ">
+     
+     <div className="flex flex-col h-full w-[413px]  justify-evenly items-center  ">
+       {"Appraisal Id "}
+       
+       <div className=" text-base text-[#8a8a8a] font-bold">
+         {appraisal.id}
+       </div>
+       <hr className="w-[33vh] h-0.5 bg-gray-300 my-2" />
+       {"Appraisal Created At "}
+       
+       <div className=" text-base text-[#8a8a8a] font-bold">
+         { appraisal.created_at}
+       </div>
+       <hr className="w-[33vh] h-0.5 bg-gray-300 my-2" />
 
-      <input
-        type="text"
-        id="text"
-        name="text"
-        onChange={(e) => setResponse(e.target.value)}
-        className=" bg-slate-500 input peer placeholder-transparent rounded-md focus:ring-1 focus:ring-[#3D4E42] h-10 w-full border border-double  border-white focus:border-[#3D4E42]  outline-none   text-lg font-normal p-2 "
-        placeholder="Your Feed Back"
-        autoComplete="off"
-        value={response}
-        required
-      />
+           </div>
 
-      <button
-        className="  bg-transparent   hover:tracking-tighter text-[#DBE3D6]   w-full h-20 font-bold border-none transition ease-in-out duration-500 text-lg hover:text-[#5EAC74]"
+           <div className= {`relative w-80   flex-row text-[#313132] h-32   "`}>
+            <input   type= "text" id="apr_res"  name="apr_res" onChange= {(e) => setResponse(e.target.value)} value={response} placeholder="FeedBack" maxLength={50} pattern={"[A-Za-z\s]{1,50}"}  className=" input peer placeholder-transparent rounded-md focus:ring-1  focus:ring-[#4E4E4E] h-10 w-full border border-double  border-zinc-900 focus:border-[#4E4E4E]  outline-none   text-lg font-normal p-3  "/>
+            <label className=" absolute left-0 -top-5 text-black text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-6 peer-focus:text-gray-600 peer-focus:text-sm">
+                {"Feed Back"}
+              </label>
+              <p className=" invisible peer-invalid:visible text-red-800 text-sm  ">
+                {"Please Provide Valid FeedBackc"}
+              </p>
+              
+
+        </div>
+       
+        <button
+        className="  bg-transparent   hover:tracking-tighter text-[#949494]   w-32 h-20 font-bold border-none transition ease-in-out duration-500 text-lg hover:text-[#000000]"
         onClick={handle}
       >
         Submit
       </button>
+           </div>
+           
+           </div>
+           </div>
+           </div>
+
+
 
     </div>
   );

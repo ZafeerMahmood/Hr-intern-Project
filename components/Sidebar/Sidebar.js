@@ -20,29 +20,29 @@ const Sidebar = () => {
 
                 <SideBarItem
                     title={"Add Employee"}
-                    {...router.pathname === "/addemployees" ? {icon: '/Schedules.svg'} : {icon: '/Schedule1.svg'}}
-                    {...router.pathname === "/addemployees" ? {isActive: true} : {isActive: false}}
+                    {...router.pathname === "/add_care_employees" ? {icon: '/Schedules.svg'} : {icon: '/Schedule1.svg'}}
+                    {...router.pathname === "/add_care_employees" ? {isActive: true} : {isActive: false}}
 
 
                     onClick={() => {
-                        router.push("/addemployees");
+                        router.push("/add_care_employees");
                     }}
                 />
                 <SideBarItem
                     title={"Care Employees"}
-                    {...router.pathname === "/seeemployees" ? {icon: '/POSelected.svg'} : {icon: '/PO.svg'}}
-                    {...router.pathname === "/seeemployees" ? {isActive: true} : {isActive: false}}
+                    {...router.pathname === "/care_employee_profile" ? {icon: '/POSelected.svg'} : {icon: '/PO.svg'}}
+                    {...router.pathname === "/care_employee_profile" ? {isActive: true} : {isActive: false}}
                     onClick={() => {
-                        router.push('/seeemployees')
+                        router.push('/care_employee_profile')
                     }}
                 />
                 <SideBarItem
                     title={"Department Inforamtion"}
-                    {...router.pathname === "/department_info" ? {icon: '/Schedules.svg'} : {icon: '/Schedule1.svg'}}
+                    {...router.pathname === "/care_department_info" ? {icon: '/Schedules.svg'} : {icon: '/Schedule1.svg'}}
                     onClick={() => {
-                        router.push('/department_info')
+                        router.push('/care_department_info')
                     }}
-                    {...router.pathname === "/department_info" ? {isActive: true} : {isActive: false}}
+                    {...router.pathname === "/care_department_info" ? {isActive: true} : {isActive: false}}
                 />
 
                         <SideBarItem
@@ -55,11 +55,11 @@ const Sidebar = () => {
                         />
                         <SideBarItem
                             title={"Department Employees"}
-                            {...router.pathname === "/department_employees" ?{icon: '/Schedules.svg'} : {icon: '/Schedule1.svg'}}
+                            {...router.pathname === "/care_department_employee" ?{icon: '/Schedules.svg'} : {icon: '/Schedule1.svg'}}
                             onClick={() => {
-                                router.push('/department_employees')
+                                router.push('/care_department_employee')
                             }}
-                            {...router.pathname === "/department_employees" ? {isActive: true} : {isActive: false}}
+                            {...router.pathname === "/care_department_employee" ? {isActive: true} : {isActive: false}}
                         />
                         
 
@@ -74,11 +74,11 @@ const Sidebar = () => {
                         
                         <SideBarItem
                             title={"Appraisal Session"}
-                            {...router.pathname === "/appraisal" ? {icon: '/Schedules.svg'} : {icon: '/Schedule1.svg'}}
+                            {...router.pathname === "/care_appraisal_session" ? {icon: '/Schedules.svg'} : {icon: '/Schedule1.svg'}}
                             onClick={() => {
-                                router.push('/appraisal')
+                                router.push('/care_appraisal_session')
                             }}
-                            {...router.pathname === "/appraisal" ? {isActive: true} : {isActive: false}}
+                            {...router.pathname === "/care_appraisal_session" ? {isActive: true} : {isActive: false}}
                         />
                         
 
@@ -93,11 +93,11 @@ const Sidebar = () => {
                         
                         <SideBarItem
                             title={"Projects Information"}
-                            {...router.pathname === "/project" ? {icon: '/Schedules.svg'} : {icon: '/Schedule1.svg'}}
+                            {...router.pathname === "/care_project_information" ? {icon: '/Schedules.svg'} : {icon: '/Schedule1.svg'}}
                             onClick={() => {
-                                router.push('/project')
+                                router.push('/care_project_information')
                             }}
-                            {...router.pathname === "/project" ? {isActive: true} : {isActive: false}}
+                            {...router.pathname === "/care_project_information" ? {isActive: true} : {isActive: false}}
                         />
 
                         <SideBarItem
@@ -111,11 +111,11 @@ const Sidebar = () => {
                         
                         <SideBarItem
                             title={"Projects Employees"}
-                            {...router.pathname === "/project_employees" ? {icon: '/Schedules.svg'} : {icon: '/Schedule1.svg'}}
+                            {...router.pathname === "/care_project_emp" ? {icon: '/Schedules.svg'} : {icon: '/Schedule1.svg'}}
                             onClick={() => {
-                                router.push('/project_employees')
+                                router.push('/care_project_emp')
                             }}
-                            {...router.pathname === "/project_employees" ? {isActive: true} : {isActive: false}}
+                            {...router.pathname === "/care_project_emp" ? {isActive: true} : {isActive: false}}
                         />
 
                         <SideBarItem

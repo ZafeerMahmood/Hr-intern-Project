@@ -8,11 +8,11 @@ export default function Seeemployees({employee}) {
     
     return (
       <div className='w-full h-full overflow-auto bg-white '>
-        <div className=' flex flex-col  items-start justify-start  gap-11 w-full h-screen p-10  border-t-0 border-black border-l-0 border-[1px]'>
+        <div className=' flex flex-col  items-center justify-start  gap-11 w-full h-fit p-10  border-t-0 border-black border-l-0 border-[1px]'>
           
           <div className="flex flex-col h-full w-3/4  rounded-md  opacity-75 justify-center shadow-md ">
                 <div className="flex flex-row justify-center  text-2xl font-semibold text-black rounded-md leading-loose h-20">
-                  C@RE EMPLOYEES
+                  Department Info
                 </div>
 
                 {employee.map((employee) => (
@@ -39,4 +39,5 @@ export async function getStaticProps() {
       props: { employee },
     };
   }
+
 
