@@ -18,7 +18,8 @@ export default function Display({ employee }) {
         {employee.map((employee, index) => {
           if (employee.personal_email === email) {
             return (
-              <div >
+
+              <div key={index}>
          <div className='w-full h-full bg-white '>
         <div className=' flex flex-col  items-start justify-start  gap-11 w-full h-fit p-10   border-black  border-[1px]'>
           
